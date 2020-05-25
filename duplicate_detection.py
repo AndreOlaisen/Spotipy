@@ -115,10 +115,11 @@ def change_duplicates_playlist(token, playlist_uri, duplicates_df, user):
 
 if __name__ == "__main__":
 
-    cid = "0f9aab51c77d40f09fed3cd3bd319a3a"
-    secret = "3b4870e243ca4d2f86959039dd671642"
-
-    username = "1149353422"
+    cid = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    
+    username = "XXXXXXXX"
+    
     scope = 'playlist-modify-private'
     token = util.prompt_for_user_token(username,
                                        scope,
@@ -130,8 +131,10 @@ if __name__ == "__main__":
 
     duplicate_data = pd.read_csv('duplicates.csv', encoding='utf-8')
     duplicate_data = duplicate_data[["track", "change", "wanted_track"]]
+    
+    playlist_uri = "spotify:playlist:XXXXXXXXXXX"
 
-    change_duplicates_playlist(token, "spotify:playlist:10aMTZbbZc19xsWOkHO4LN", duplicate_data, username)
+    change_duplicates_playlist(token, playlist_uri, duplicate_data, username)
     """
     path = "C:/Users/User/Documents/NTNU/Annet/Spotipy/Playlists/"
     songs = pd.read_csv(path + 'alt_copy.csv', encoding='utf-8')
